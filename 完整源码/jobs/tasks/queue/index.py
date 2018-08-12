@@ -6,6 +6,7 @@ from common.libs.Helper import getCurrentDate
 from common.libs.pay.WeChatService import WeChatService
 from common.models.pay.PayOrder import PayOrder
 from common.models.pay.PayOrderItem import PayOrderItem
+from common.models.member.OauthMemberBind import OauthMemberBind
 from common.models.food.Food import Food
 from common.models.food.FoodSaleChangeLog import FoodSaleChangeLog
 from sqlalchemy import func
@@ -34,6 +35,10 @@ class JobTask():
         if 'member_id' not in data or 'pay_order_id' not in data:
             return False
 
+        oauth_bind_info = OauthMemberBind.query.filter_by(member_id=data['member_id']).first()
+        if not oauth_bind_info:
+            return False
+            
         pay_order_info = PayOrder.query.filter_by( id = data['pay_order_id']).first()
         if not pay_order_info:
             return False
@@ -75,7 +80,7 @@ class JobTask():
         headers = {'Content-Type': 'application/json'}
         url = "https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=%s"%access_token
         params = {
-            "touser": "oZibu0B_zSld12aXk-imNeJfpqtg",
+            "touser": oauth_bind_info.openid,
             "template_id":"8aqlWFAjZZ_NnR0_vOvHGcwHglvIlAYRaUyOmFD5kvs",
             "page": "pages/my/order_list",
             "form_id": pay_order_info.prepay_id,
