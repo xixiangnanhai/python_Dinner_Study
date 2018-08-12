@@ -8,7 +8,7 @@ class FoodService():
     @staticmethod
     def setStockChangeLog( food_id = 0,quantity = 0,note = '' ):
 
-        if food_id < 1 or quantity < 1:
+        if food_id < 1:
             return False
 
         food_info = Food.query.filter_by( id = food_id ).first()

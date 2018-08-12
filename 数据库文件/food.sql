@@ -150,7 +150,7 @@ DROP TABLE IF EXISTS `food_stock_change_log`;
 
 CREATE TABLE `food_stock_change_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `food_id` int(11) NOT NULL COMMENT '书籍商品id',
+  `food_id` int(11) NOT NULL COMMENT '商品id',
   `unit` int(11) NOT NULL DEFAULT '0' COMMENT '变更多少',
   `total_stock` int(11) NOT NULL DEFAULT '0' COMMENT '变更之后总量',
   `note` varchar(100) NOT NULL DEFAULT '' COMMENT '备注字段',
@@ -200,7 +200,7 @@ DROP TABLE IF EXISTS `member_cart`;
 CREATE TABLE `member_cart` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `member_id` bigint(20) NOT NULL DEFAULT '0' COMMENT '会员id',
-  `food_id` int(11) NOT NULL DEFAULT '0' COMMENT '图书id',
+  `food_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品id',
   `quantity` int(11) NOT NULL DEFAULT '0' COMMENT '数量',
   `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一次更新时间',
   `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '插入时间',
