@@ -20,7 +20,7 @@ def ueditor():
 	if action == "config":
 		root_path = app.root_path
 		config_path = "{0}/web/static/plugins/ueditor/upload_config.json".format( root_path )
-		with open( config_path ) as fp:
+		with open( config_path,encoding="utf-8" ) as fp:
 			try:
 				config_data =  json.loads( re.sub( r'\/\*.*\*/' ,'',fp.read() ) )
 			except:
