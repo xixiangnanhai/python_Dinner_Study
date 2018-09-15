@@ -3,6 +3,9 @@ SERVER_PORT = 8999
 DEBUG = False
 SQLALCHEMY_ECHO = False
 
+#有可能你使用浏览器看到的一串字符串不是那么容易看懂的，这是因为python底层使用unicode编码。
+JSON_AS_ASCII = False
+
 AUTH_COOKIE_NAME = "mooc_food"
 
 SEO_TITLE = "Python Flask构建微信小程序订餐系统"
