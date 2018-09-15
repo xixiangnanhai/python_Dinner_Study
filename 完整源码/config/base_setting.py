@@ -4,7 +4,7 @@ DEBUG = False
 SQLALCHEMY_ECHO = False
 
 #有可能你使用浏览器看到的一串字符串不是那么容易看懂的，这是因为python底层使用unicode编码。
-#通过设置下面的参数可以解决这个问题。算了不解释了，就这样，因为懂的人明白我说什么。
+#通过设置下面的参数可以解决这个问题。
 JSON_AS_ASCII = False
 
 AUTH_COOKIE_NAME = "mooc_food"
