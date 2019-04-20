@@ -6,6 +6,8 @@ from application import  db
 
 
 class AppAccessLog(db.Model):
+    # db.create_all()
+
     __tablename__ = 'app_access_log'
 
     id = db.Column(db.Integer, primary_key=True)

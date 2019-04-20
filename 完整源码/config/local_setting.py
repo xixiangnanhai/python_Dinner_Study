@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
+
+
+
 DEBUG = True
 SQLALCHEMY_ECHO = True
-SQLALCHEMY_DATABASE_URI = 'mysql://root:@127.0.0.1/food_db?charset=utf8mb4'
+SQLALCHEMY_TRACK_MODIFICATIONS=True
+SQLALCHEMY_COMMIT_TEARDOWN=True
+
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://dailai:dailai1989320@127.0.0.1/food_db?charset=utf8mb4'
+# SQLALCHEMY_DATABASE_URI = 'pymysql://dailai:1989320@127.0.0.1/food_db?charset=utf8mb4'
+# SQLALCHEMY_DATABASE_URI = 'mysql://dailai:1989320'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ENCODING = "utf8mb4"
+
+
+# SQLALCHEMY_ENCODING = 'en_US.UTF-8'
+
+# 'en_US.UTF-8'

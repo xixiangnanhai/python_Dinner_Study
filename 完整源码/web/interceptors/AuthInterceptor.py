@@ -27,7 +27,8 @@ def before_request():
     if user_info:
         g.current_user = user_info
 
-    #加入日志
+    #加入日志//TODO
+
     LogService.addAccessLog()
     pattern = re.compile('%s' % "|".join(ignore_urls))
     if pattern.match(path):

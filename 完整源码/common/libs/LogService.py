@@ -18,6 +18,7 @@ class LogService():
             target.uid = g.current_user.uid
         target.ua = request.headers.get( "User-Agent" )
         target.created_time = getCurrentDate()
+
         db.session.add( target )
         db.session.commit( )
         return True
